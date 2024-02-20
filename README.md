@@ -1,7 +1,16 @@
-A simple demo of rolling phrases animation.
+# Rolling Phrases Hero Section Demo
 
-This can be used to spice up your hero section.
+This is a demo of a hero section with dynamic, rolling phrases. It's designed to add flair to your website's main visual area.
 
-Uses Next.js with tailwind and framer motion, but this can be easily achieved with just pure tailwind too (or just pure css for that matter). 
 
-I avoid using `useEffect` or `setInterval`
+![demo-gif](https://github.com/atharvashukla/rolling-phrases/assets/33644308/a52226f4-6377-4862-8255-a0fc73b1e8ba)
+
+
+
+
+**Tech Used:**
+- Next.js (works with or without TypeScript)
+- Tailwind CSS
+- Framer Motion (Framer motion is nice, but we can do this with pure tailwind too, or pure css for that matter)
+
+**Note:** Does not use `useEffect` or `setInterval`
