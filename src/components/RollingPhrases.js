@@ -1,4 +1,7 @@
-"use client";
+"use client"
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const phrases = [
   "for Autonomous Negotiation",
@@ -12,13 +15,27 @@ const phrases = [
 ];
 
 export default function RollingPhrases() {
+  const [index, setIndex] = useState(0);
+
+  const nextPhrase = () => {
+    setIndex((prev) => (prev + 1) % phrases.length);
+  };
+
   return (
     <div className="overflow-hidden h-6 mt-2 relative">
-      {phrases.map((phrase, index) => (
-        <div key={index} className="whitespace-nowrap animate-roll">
-          {phrase}
-        </div>
-      ))}
+      <AnimatePresence>
+        <motion.div
+          key={index}
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -30, opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          onAnimationComplete={nextPhrase}
+          className="whitespace-nowrap"
+        >
+          {phrases[index]}
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 }
